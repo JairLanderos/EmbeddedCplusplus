@@ -1,4 +1,4 @@
-# Embedded_Cpp
+# Servo
 
 This project contains drivers to control Servomotors on STM32F4xx microcontroller and an application example using C++.
 #NOTE: This project was created on STM32F446RE microcontroller based Nucleo board. 
