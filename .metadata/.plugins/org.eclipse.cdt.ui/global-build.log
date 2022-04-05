@@ -1,0 +1,20 @@
+06:06:40 **** Incremental Build of configuration Debug for project Servo ****
+make all 
+Building file: ../Src/main.cpp
+Invoking: MCU G++ Compiler
+C:\Users\Fam. Landeros Franco\Desktop\Embedded Systems\C++ course\Servo\Debug
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F446xx -I"C:/Users/Fam. Landeros Franco/Desktop/Embedded Systems/C++ course/Servo/Inc" -I"C:/Users/Fam. Landeros Franco/Desktop/Embedded Systems/C++ course/Servo/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/Users/Fam. Landeros Franco/Desktop/Embedded Systems/C++ course/Servo/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"C:/Users/Fam. Landeros Franco/Desktop/Embedded Systems/C++ course/Servo/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/Users/Fam. Landeros Franco/Desktop/Embedded Systems/C++ course/Servo/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fno-exceptions -fno-rtti -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.cpp"
+Finished building: ../Src/main.cpp
+ 
+Building target: Servo.elf
+Invoking: MCU G++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F446RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -fno-exceptions -fno-rtti -o "Servo.elf" @"objects.list"   -lm
+Finished building target: Servo.elf
+ 
+make --no-print-directory post-build
+Generating hex and Printing size information:
+arm-none-eabi-objcopy -O ihex "Servo.elf" "Servo.hex"
+arm-none-eabi-size "Servo.elf"
+   text	   data	    bss	    dec	    hex	filename
+   2768	     20	   1636	   4424	   1148	Servo.elf
+ 

@@ -1,0 +1,22 @@
+#include "main.h"
+#include "pinmap.h"
+
+void Error_handler(void);
+
+
+int main()
+{
+	pinStruct_t PB11;
+	PB11.GPIOx = GPIOB;
+	PB11.selectedPin = GPIO_PIN_11;
+
+	while(1)
+	{
+
+	}
+}
+
+void Error_handler(void)
+{
+	while(1);
+}

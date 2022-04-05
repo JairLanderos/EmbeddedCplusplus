@@ -1,0 +1,13 @@
+#ifndef SERVO_H_
+#define SERVO_H_
+
+class Servo
+{
+	private:
+
+	public:
+		Servo(void);
+};
+
+
+#endif /* SERVO_H_ */

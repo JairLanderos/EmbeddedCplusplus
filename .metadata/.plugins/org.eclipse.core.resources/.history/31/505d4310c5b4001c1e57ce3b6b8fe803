@@ -1,0 +1,15 @@
+#ifndef SERVO_H_
+#define SERVO_H_
+
+#include "pinmap.h"
+
+class Servo
+{
+	private:
+
+	public:
+		Servo(void);
+};
+
+
+#endif /* SERVO_H_ */

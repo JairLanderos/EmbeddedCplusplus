@@ -1,0 +1,14 @@
+#include "main.h"
+#include "pinmap.h"
+
+int main()
+{
+	pinStruct_t PB11;
+	PB11.GPIOx = GPIOB;
+	PB11.selectedPin = GPIO_PIN_11;
+
+	while(1)
+	{
+
+	}
+}
