@@ -1,0 +1,18 @@
+#ifndef HC05_H_
+#define HC05_H_
+
+#include "pinmap.h"
+
+class HC05
+{
+	private:
+
+	public:
+		HC05(pinStruct_t& rx_pin,
+			 pinStruct_t& tx_pin,
+			 uint8_t gpioAFSelectUSARTx);
+};
+
+
+
+#endif /* HC05_H_ */

@@ -1,0 +1,24 @@
+#include "hc05.h"
+
+HC05::HC05(pinStruct_t& rx_pin,
+		   pinStruct_t& tx_pin,
+		   uint8_t gpioAFSelectUSARTx)
+{
+	/* Set selected pins to use them as USARTx Rx and Tx */
+	GPIO_InitTypeDef usartx_gpios;
+
+	usartx_gpios.Mode = GPIO_MODE_AF_PP;
+	usartx_gpios.Pull = GPIO_NOPULL;
+	usartx_gpios.Speed = GPIO_SPEED_FREQ_LOW;
+	usartx_gpios.Alternate = gpioAFSelectUSARTx;
+
+	usartx_gpios.Pin = rx_pin.selectedPin;
+	HAL_GPIO_Init(rx_pin.GPIOx, &usartx_gpios);		//Rx pin
+
+	usartx_gpios.Pin = tx_pin.selectedPin;
+	HAL_GPIO_Init(tx_pin.GPIOx, &usartx_gpios);		//Tx pin
+
+
+	/* Configure USART1 peripheral */
+
+}

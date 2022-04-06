@@ -1,20 +1,110 @@
-06:06:40 **** Incremental Build of configuration Debug for project Servo ****
+07:42:37 **** Incremental Build of configuration Debug for project HC05 ****
 make all 
-Building file: ../Src/main.cpp
+Building file: ../Src/hc05.cpp
 Invoking: MCU G++ Compiler
-C:\Users\Fam. Landeros Franco\Desktop\Embedded Systems\C++ course\Servo\Debug
-arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F446xx -I"C:/Users/Fam. Landeros Franco/Desktop/Embedded Systems/C++ course/Servo/Inc" -I"C:/Users/Fam. Landeros Franco/Desktop/Embedded Systems/C++ course/Servo/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/Users/Fam. Landeros Franco/Desktop/Embedded Systems/C++ course/Servo/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"C:/Users/Fam. Landeros Franco/Desktop/Embedded Systems/C++ course/Servo/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/Users/Fam. Landeros Franco/Desktop/Embedded Systems/C++ course/Servo/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fno-exceptions -fno-rtti -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.cpp"
-Finished building: ../Src/main.cpp
+C:\Users\Fam. Landeros Franco\Desktop\Embedded Systems\C++ course\HC05\Debug
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F446xx -I"C:/Users/Fam. Landeros Franco/Desktop/Embedded Systems/C++ course/HC05/Inc" -I"C:/Users/Fam. Landeros Franco/Desktop/Embedded Systems/C++ course/HC05/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/Users/Fam. Landeros Franco/Desktop/Embedded Systems/C++ course/HC05/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"C:/Users/Fam. Landeros Franco/Desktop/Embedded Systems/C++ course/HC05/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/Users/Fam. Landeros Franco/Desktop/Embedded Systems/C++ course/HC05/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fno-exceptions -fno-rtti -MMD -MP -MF"Src/hc05.d" -MT"Src/hc05.o" -o "Src/hc05.o" "../Src/hc05.cpp"
+Finished building: ../Src/hc05.cpp
  
-Building target: Servo.elf
+Building target: HC05.elf
 Invoking: MCU G++ Linker
-arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F446RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -fno-exceptions -fno-rtti -o "Servo.elf" @"objects.list"   -lm
-Finished building target: Servo.elf
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F446RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -fno-exceptions -fno-rtti -o "HC05.elf" @"objects.list"   -lm
+Finished building target: HC05.elf
  
 make --no-print-directory post-build
 Generating hex and Printing size information:
-arm-none-eabi-objcopy -O ihex "Servo.elf" "Servo.hex"
-arm-none-eabi-size "Servo.elf"
+arm-none-eabi-objcopy -O ihex "HC05.elf" "HC05.hex"
+arm-none-eabi-size "HC05.elf"
    text	   data	    bss	    dec	    hex	filename
-   2768	     20	   1636	   4424	   1148	Servo.elf
+   2840	     20	   1644	   4504	   1198	HC05.elf
  
+07:42:52 **** Incremental Build of configuration Debug for project HC05 ****
+make all 
+make: Nothing to be done for 'all'.
+07:43:55 **** Incremental Build of configuration Debug for project HC05 ****
+make all 
+make: Nothing to be done for 'all'.
+07:46:43 **** Incremental Build of configuration Debug for project HC05 ****
+make all 
+make: Nothing to be done for 'all'.
+07:51:06 **** Programming project HC05 on chip ****
+"C:\\Ac6\\SystemWorkbench\\plugins\\fr.ac6.mcu.externaltools.openocd.win32_1.23.0.201904120827\\tools\\openocd\\bin\\openocd.exe" -f stm32.flash.6184830558123211407.cfg -s "C:\\Users\\Fam. Landeros Franco\\Desktop\\Embedded Systems\\C++ course\\HC05" -s "C:\\Ac6\\SystemWorkbench\\plugins\\fr.ac6.mcu.debug_2.5.0.201904120827\\resources\\openocd\\st_scripts" -c "program Debug/HC05.elf verify reset " -c shutdown 
+Open On-Chip Debugger 0.10.0+dev-00021-g524e8c8 (2019-04-12-08:48)
+Licensed under GNU GPL v2
+For bug reports, read
+	http://openocd.org/doc/doxygen/bugs.html
+srst_only separate srst_nogate srst_open_drain connect_assert_srst
+Info : The selected transport took over low-level target control. The results might differ compared to plain JTAG/SWD
+adapter speed: 8000 kHz
+adapter_nsrst_delay: 100
+Info : clock speed 8000 kHz
+Info : STLINK v2.1 JTAG v39 API v2 M27 VID 0x0483 PID 0x374B
+Info : using stlink api v2
+Info : Target voltage: 3.257369
+Info : Unable to match requested speed 8000 kHz, using 4000 kHz
+Info : Stlink adapter speed set to 4000 kHz
+Info : STM32F446RETx.cpu: hardware has 6 breakpoints, 4 watchpoints
+Info : Listening on port 3333 for gdb connections
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x08000a30 msp: 0x20020000
+configuring PLL
+Info : Unable to match requested speed 8000 kHz, using 4000 kHz
+Info : Stlink adapter speed set to 4000 kHz
+Info : Unable to match requested speed 8000 kHz, using 4000 kHz
+adapter speed: 4000 kHz
+** Programming Started **
+auto erase enabled
+Info : device id = 0x10006421
+Info : flash size = 512kbytes
+target halted due to breakpoint, current mode: Thread 
+xPSR: 0x61000000 pc: 0x20000046 msp: 0x20020000
+wrote 16384 bytes from file Debug/HC05.elf in 0.653039s (24.501 KiB/s)
+** Programming Finished **
+** Verify Started **
+target halted due to breakpoint, current mode: Thread 
+xPSR: 0x61000000 pc: 0x2000002e msp: 0x20020000
+verified 2860 bytes in 0.212718s (13.130 KiB/s)
+** Verified OK **
+** Resetting Target **
+shutdown command invoked
+07:51:30 **** Incremental Build of configuration Debug for project HC05 ****
+make all 
+make: Nothing to be done for 'all'.
+07:53:28 **** Incremental Build of configuration Debug for project HC05 ****
+make all 
+make: Nothing to be done for 'all'.
+07:55:57 **** Incremental Build of configuration Debug for project HC05 ****
+make all 
+make: Nothing to be done for 'all'.
+07:56:20 **** Incremental Build of configuration Debug for project HC05 ****
+make all 
+make: Nothing to be done for 'all'.
+08:06:50 **** Incremental Build of configuration Debug for project HC05 ****
+make all 
+Building file: ../Src/hc05.cpp
+Invoking: MCU G++ Compiler
+C:\Users\Fam. Landeros Franco\Desktop\Embedded Systems\C++ course\HC05\Debug
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F446xx -I"C:/Users/Fam. Landeros Franco/Desktop/Embedded Systems/C++ course/HC05/Inc" -I"C:/Users/Fam. Landeros Franco/Desktop/Embedded Systems/C++ course/HC05/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/Users/Fam. Landeros Franco/Desktop/Embedded Systems/C++ course/HC05/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"C:/Users/Fam. Landeros Franco/Desktop/Embedded Systems/C++ course/HC05/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/Users/Fam. Landeros Franco/Desktop/Embedded Systems/C++ course/HC05/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fno-exceptions -fno-rtti -MMD -MP -MF"Src/hc05.d" -MT"Src/hc05.o" -o "Src/hc05.o" "../Src/hc05.cpp"
+Finished building: ../Src/hc05.cpp
+ 
+Building file: ../Src/main.cpp
+Invoking: MCU G++ Compiler
+C:\Users\Fam. Landeros Franco\Desktop\Embedded Systems\C++ course\HC05\Debug
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F446xx -I"C:/Users/Fam. Landeros Franco/Desktop/Embedded Systems/C++ course/HC05/Inc" -I"C:/Users/Fam. Landeros Franco/Desktop/Embedded Systems/C++ course/HC05/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/Users/Fam. Landeros Franco/Desktop/Embedded Systems/C++ course/HC05/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"C:/Users/Fam. Landeros Franco/Desktop/Embedded Systems/C++ course/HC05/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/Users/Fam. Landeros Franco/Desktop/Embedded Systems/C++ course/HC05/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fno-exceptions -fno-rtti -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.cpp"
+Finished building: ../Src/main.cpp
+ 
+Building target: HC05.elf
+Invoking: MCU G++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F446RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -fno-exceptions -fno-rtti -o "HC05.elf" @"objects.list"   -lm
+Finished building target: HC05.elf
+ 
+make --no-print-directory post-build
+Generating hex and Printing size information:
+arm-none-eabi-objcopy -O ihex "HC05.elf" "HC05.hex"
+arm-none-eabi-size "HC05.elf"
+   text	   data	    bss	    dec	    hex	filename
+   2840	     20	   1644	   4504	   1198	HC05.elf
+ 
+08:14:20 **** Incremental Build of configuration Debug for project HC05 ****
+make all 
+make: Nothing to be done for 'all'.

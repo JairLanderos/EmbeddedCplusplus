@@ -1,0 +1,6 @@
+#include "hc05.h"
+
+HC05::HC05(void)
+{
+
+}
