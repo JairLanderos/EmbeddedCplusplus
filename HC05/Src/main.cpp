@@ -1,6 +1,5 @@
 #include "main.h"
 #include "hc05.h"
-#include <stdio.h>
 
 char received_data = '\0';
 

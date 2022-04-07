@@ -2,18 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="TIM_Output_Fast_State" key="selection"/>
+		<item value="UART_Hardware_Flow_Control" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="UART_Hardware_Flow_Control"/>
+			<item value="UART_Parity"/>
+			<item value="UART_Stop_Bits"/>
+			<item value="UART_Word_Length"/>
+			<item value="UART_Over_Sampling"/>
+			<item value="UART_Mode"/>
+			<item value="DMA_mode"/>
 			<item value="TIM_Output_Fast_State"/>
-			<item value="TIM_Output_Compare_N_Polarity"/>
-			<item value="TIM_Output_Compare_and_PWM_modes"/>
-			<item value="TIM_ClockDivision"/>
-			<item value="TIM_Counter_Mode"/>
-			<item value="GPIO_Typed"/>
 		</list>
 		<list key="replacehistory">
 		</list>
