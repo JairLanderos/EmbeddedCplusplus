@@ -1,0 +1,29 @@
+18:09:32 **** Incremental Build of configuration Debug for project LCD ****
+make all 
+Building file: ../Src/lcd.cpp
+Invoking: MCU G++ Compiler
+C:\Users\Fam. Landeros Franco\Desktop\Embedded Systems\C++ course\LCD\Debug
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F446xx -I"C:/Users/Fam. Landeros Franco/Desktop/Embedded Systems/C++ course/LCD/Inc" -I"C:/Users/Fam. Landeros Franco/Desktop/Embedded Systems/C++ course/LCD/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/Users/Fam. Landeros Franco/Desktop/Embedded Systems/C++ course/LCD/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"C:/Users/Fam. Landeros Franco/Desktop/Embedded Systems/C++ course/LCD/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/Users/Fam. Landeros Franco/Desktop/Embedded Systems/C++ course/LCD/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fno-exceptions -fno-rtti -MMD -MP -MF"Src/lcd.d" -MT"Src/lcd.o" -o "Src/lcd.o" "../Src/lcd.cpp"
+Finished building: ../Src/lcd.cpp
+ 
+Building file: ../Src/main.cpp
+Invoking: MCU G++ Compiler
+C:\Users\Fam. Landeros Franco\Desktop\Embedded Systems\C++ course\LCD\Debug
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F446xx -I"C:/Users/Fam. Landeros Franco/Desktop/Embedded Systems/C++ course/LCD/Inc" -I"C:/Users/Fam. Landeros Franco/Desktop/Embedded Systems/C++ course/LCD/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/Users/Fam. Landeros Franco/Desktop/Embedded Systems/C++ course/LCD/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"C:/Users/Fam. Landeros Franco/Desktop/Embedded Systems/C++ course/LCD/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/Users/Fam. Landeros Franco/Desktop/Embedded Systems/C++ course/LCD/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fno-exceptions -fno-rtti -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.cpp"
+Finished building: ../Src/main.cpp
+ 
+Building target: LCD.elf
+Invoking: MCU G++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F446RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -fno-exceptions -fno-rtti -o "LCD.elf" @"objects.list"   -lm
+Finished building target: LCD.elf
+ 
+make --no-print-directory post-build
+Generating hex and Printing size information:
+arm-none-eabi-objcopy -O ihex "LCD.elf" "LCD.hex"
+arm-none-eabi-size "LCD.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1124	     20	   1572	   2716	    a9c	LCD.elf
+ 
+
+18:09:36 Build Finished (took 4s.240ms)
+

@@ -1,0 +1,11 @@
+#include "lcd.h"
+
+LCD::LCD(pinStruct_t& RS,
+	pinStruct_t& EN,
+	pinStruct_t& D4,
+	pinStruct_t& D5,
+	pinStruct_t& D6,
+	pinStruct_t& D7)
+{
+
+}

@@ -1,0 +1,29 @@
+#include "lcd.h"
+
+LCD::LCD(pinStruct_t& RS,
+		 pinStruct_t& EN,
+		 pinStruct_t& D4,
+		 pinStruct_t& D5,
+		 pinStruct_t& D6,
+		 pinStruct_t& D7)
+{
+	/* LCD pin initialization */
+	GPIO_InitTypeDef lcdPinInitStruct[6] = {0};
+	pinStruct_t lcdPinArray[6] = {RS, EN, D4, D5, D6, D7};
+	for (uint8_t i = 0 ; i < 6 ; i++)
+	{
+		lcdPinInitStruct[i].Mode = GPIO_MODE_OUTPUT_PP;
+		lcdPinInitStruct[i].Pin = lcdPinArray[i].selectedPin;
+		HAL_GPIO_Init(lcdPinArray[i].GPIOx, &lcdPinInitStruct[i]);
+	}
+
+	/* Private variable initialization */
+	rs = RS;
+	en = EN;
+	dataPins[0] = D4;
+	dataPins[1] = D5;
+	dataPins[2] = D6;
+	dataPins[3] = D7;
+
+	/* LCD initialization by instruction */
+}

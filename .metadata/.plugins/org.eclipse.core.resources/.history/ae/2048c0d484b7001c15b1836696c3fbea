@@ -1,0 +1,78 @@
+#include "lcd.h"
+
+enum LCD_Commands
+{
+	FUNCTION_SET_8BIT = 0x03,
+	FUNCTION_SET_4BIT = 0x02,
+	FUNCTION_SET_2LINE_5x8DOT = 0x28,
+	CLEAR_DISPLAY = 0x01,
+	DISPLAY_ON_CURSOR_ON = 0x0E,
+	DISPLAY_ON_CURSOR_OFF = 0x0C,
+	ENTRY_MODE_INCREMENT_CURSOR = 0x06
+};
+
+enum NibbleBitPosition
+{
+	LOW_NIBBLE = 0,
+	HIGH_NIBBLE = 4
+};
+
+void LCD::WriteByte(GPIO_PinState lcdMode, char command)
+{
+	HAL_GPIO_WritePin(rs.GPIOx, rs.selectedPin, lcdMode);
+	LCD::WriteNibble(command, HIGH_NIBBLE);
+	LCD::WriteNibble(command, LOW_NIBBLE);
+}
+
+void LCD::WriteNibble(char byte, uint8_t nibbleBitPos)
+{
+
+}
+
+LCD::LCD(pinStruct_t& RS,
+		 pinStruct_t& EN,
+		 pinStruct_t& D4,
+		 pinStruct_t& D5,
+		 pinStruct_t& D6,
+		 pinStruct_t& D7)
+{
+	/* LCD pin initialization */
+	GPIO_InitTypeDef lcdPinInitStruct[6] = {0};
+	pinStruct_t lcdPinArray[6] = {RS, EN, D4, D5, D6, D7};
+	for (uint8_t i = 0 ; i < 6 ; i++)
+	{
+		lcdPinInitStruct[i].Mode = GPIO_MODE_OUTPUT_PP;
+		lcdPinInitStruct[i].Pin = lcdPinArray[i].selectedPin;
+		HAL_GPIO_Init(lcdPinArray[i].GPIOx, &lcdPinInitStruct[i]);
+	}
+
+	/* Private variable initialization */
+	rs = RS;
+	en = EN;
+	dataPins[0] = D4;
+	dataPins[1] = D5;
+	dataPins[2] = D6;
+	dataPins[3] = D7;
+
+	/* LCD initialization by instruction */
+	HAL_Delay(100);											//Wait for more than 40ms after Vcc rises to 2.7V
+	LCD::WriteByte(GPIO_PIN_RESET, FUNCTION_SET_8BIT);	//Function set (8-bit)
+	HAL_Delay(5);											//Wait for more than 4.1ms
+	LCD::WriteByte(GPIO_PIN_RESET, FUNCTION_SET_8BIT);	//Function set (8-bit)
+	HAL_Delay(1);											//Wait for more than 100us
+	LCD::WriteByte(GPIO_PIN_RESET, FUNCTION_SET_8BIT);	//Function set (8-bit)
+	//Set interface to be 4-bits long and initialize LCD
+	uint8_t CommandSetting[5] =
+	{
+			FUNCTION_SET_4BIT,
+			FUNCTION_SET_2LINE_5x8DOT,
+			CLEAR_DISPLAY,
+			DISPLAY_ON_CURSOR_OFF,
+			ENTRY_MODE_INCREMENT_CURSOR
+	};
+	for (uint8_t i = 0 ; i < 5 ; i++)
+	{
+		LCD::WriteByte(GPIO_PIN_RESET)
+	}
+
+}
